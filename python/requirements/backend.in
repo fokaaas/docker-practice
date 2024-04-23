@@ -1,4 +1,5 @@
 fastapi
 pydantic
+pydantic-settings
 starlette
 uvicorn[standard]
