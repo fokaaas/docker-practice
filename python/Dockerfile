@@ -2,7 +2,7 @@
 # BUILD IMAGE
 #############
 
-FROM python:3.10-bullseye
+FROM python:3.10-alpine
 
 WORKDIR /app
 
