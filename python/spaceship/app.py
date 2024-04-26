@@ -25,4 +25,8 @@ def make_app(settings: Settings) -> FastAPI:
     async def root() -> str:
         return 'build/index.html'
 
+    @app.get('/treasure', include_in_schema=False, response_class=FileResponse)
+    async def treasure() -> str:
+        return 'build/treasure.html'
+
     return app
