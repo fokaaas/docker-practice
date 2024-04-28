@@ -1,0 +1,30 @@
+{
+  "name": "vowel-counter",
+  "version": "1.0.0",
+  "description": "Return the count of vowels in the given string",
+  "main": "index.js",
+  "scripts": {
+    "count": "pnpm tsc && node build/src/index.js",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "keywords": [
+    "counter",
+    "vowels"
+  ],
+  "author": "Stanislav Basarab",
+  "license": "ISC",
+  "devDependencies": {
+    "gts": "^5.2.0",
+    "typescript": "~5.2.0",
+    "@types/node": "20.11.23"
+  },
+  "dependencies": {
+    "commander": "^12.0.0"
+  }
+}
