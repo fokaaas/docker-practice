@@ -17,7 +17,7 @@ RUN go build -o fizzbuzz
 # BUILD SMALL IMAGE
 ###################
 
-FROM scratch
+FROM gcr.io/distroless/base
 
 WORKDIR /app
 
