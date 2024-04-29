@@ -1,15 +1,27 @@
-FROM node:22-alpine
+############
+# COMPILE TS
+############
+
+FROM node:22-slim AS builder
 
 WORKDIR /app
 
-RUN npm install -g pnpm
+RUN npm install -g pnpm @vercel/ncc
 
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
 COPY . .
-RUN pnpm tsc
+RUN ncc build src/index.ts -o build
 
-EXPOSE 3000
+###################
+# BUILD FINAL IMAGE
+###################
 
-ENTRYPOINT ["pnpm", "count"]
+FROM node:22-slim
+
+WORKDIR /app
+
+COPY --from=builder /app/build/ .
+
+ENTRYPOINT ["node", "index.js"]
