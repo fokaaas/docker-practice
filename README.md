@@ -125,7 +125,7 @@ docker build -t ts_app .
 Run the container:
 
 ```bash
-docker run -p 3003:8080 ts_app
+docker run -it ts_app
 ```
 
 App is running on [http://localhost:3003](http://localhost:3003)
