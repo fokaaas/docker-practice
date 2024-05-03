@@ -128,7 +128,7 @@ Run the container:
 docker run -it ts_app
 ```
 
-App is running on [http://localhost:3003](http://localhost:3003)
+App is running on your terminal.
 
 Dockerfile
 
